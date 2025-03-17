@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autism Awareness</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e8f5e9;
+            text-align: center;
+            position: relative;
+        }
+
+        .header {
+            background: #2E7D32;
+            color: white;
+            padding: 20px;
+            font-size: 24px;
+        }
+
+        .container {
+            margin: 50px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 800px;
+        }
+
+        .banner {
+            width: 300px;
+            height: 300px;
+            background: url('au.jpeg') center/cover no-repeat;
+            border-radius: 50%;
+            margin: 20px auto;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .login-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url('au.jpeg') center/cover no-repeat;
+            position: relative;
+        }
+
+        .login-container::before {
+            content: "\"Autism is not a disability, it’s a different ability.\" - Stuart Duncan \A \"Different, not less.\" - Temple Grandin";
+            white-space: pre-wrap;
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 24px;
+            font-weight: bold;
+            color: rgba(255, 255, 255, 0.6);
+            text-align: center;
+            max-width: 80%;
+        }
+
+        .login-box {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .login-box h2 {
+            margin-bottom: 20px;
+            color: #2E7D32;
+        }
+
+        .login-box input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .login-box button {
+            background-color: #66bb6a;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+            width: 100%;
+        }
+
+        .login-box button:hover {
+            background-color: #388e3c;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">Welcome to Autism Awareness</div>
+    <div class="container" id="intro">
+        <div class="banner"></div>
+        <h1>Raising Awareness & Support</h1>
+        <p>Learn about autism, its challenges, and available support options.</p>
+        <button onclick="showLogin()">Proceed</button>
+    </div>
+
+    <div class="login-container" id="login" style="display:none;">
+        <div class="login-box">
+            <h2>Login</h2>
+            <input type="text" placeholder="Username" id="username">
+            <input type="password" placeholder="Password" id="password">
+            <button onclick="login()">Login</button>
+        </div>
+    </div>
+
+    <div class="container" id="sections" style="display:none;">
+        <h2>Consult a Doctor</h2>
+        <div class="card">SHIVANYA CIDA - ABA Therapy, 4.8 Rating</div>
+        <div class="card">Mind Care Hospital - Psychiatrist, 4.9 Rating</div>
+        <div class="card">Asha Neuro Psychiatric Clinic - 4.8 Rating</div>
+
+        <h2>Choose a Therapist</h2>
+        <div class="card">Dewdrops Development - Speech & Language Therapy, 4.5 Rating</div>
+        <div class="card">One Umbrella Neurodiversity & ABA Therapy - 4.7 Rating</div>
+
+        <h2>Autism Information Chatbox</h2>
+        <textarea placeholder="Ask about Autism..." rows="5" cols="50"></textarea>
+        <button>Submit</button>
+
+        <h2>User Interaction</h2>
+        <textarea placeholder="Provide feedback or new information..." rows="5" cols="50"></textarea>
+        <button>Submit</button>
+    </div>
+
+    <script>
+        function showLogin() {
+            document.getElementById('intro').style.display = 'none';
+            document.getElementById('login').style.display = 'flex';
+        }
+
+        function login() {
+            let username = document.getElementById('username').value;
+            let password = document.getElementById('password').value;
+            if (username && password) {
+                alert('Login successful!');
+                document.getElementById('login').style.display = 'none';
+                document.getElementById('sections').style.display = 'block';
+            } else {
+                alert('Please enter both username and password');
+            }
+        }
+    </script>
+</body>
+
+</html>
